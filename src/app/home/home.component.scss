@@ -1,0 +1,151 @@
+header.header {
+  height: 10vh;
+  padding: 0 24px;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 42px -3px rgba(0, 0, 0, 0.1);
+
+  h1.header-title {
+    font-weight: 400;
+  }
+}
+
+.wrapper-grid {
+  display: grid;
+  padding-top: 15vh;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.contact-card {
+  flex-direction: column;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 10px 42px -3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 16px;
+  box-sizing: border-box;
+  height: 330px;
+
+  &:hover {
+    .description-container {
+      height: auto;
+    }
+    .contact-img {
+      height: 160px;
+    }
+    .img-container {
+      height: 160px;
+    }
+    .title-container {
+      padding-top: 0px;
+    }
+    .main {
+      height: 100px;
+    }
+  }
+}
+
+.img-container {
+  height: 220px;
+  width: 100%;
+  transition: height 0.1s ease;
+
+  .contact-card:hover & {
+    height: 160px;
+  }
+}
+
+.contact-img {
+  height: 220px;
+  width: 100%;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: height 0.1s ease-in-out;
+
+  .contact-card:hover & {
+    height: 160px;
+  }
+}
+
+.img-contact {
+  position: absolute;
+  width: 100%;
+  transition: height 0.1s ease-in-out;
+}
+.img-logo {
+  width: 30%;
+  position: absolute;
+  bottom: -25px;
+  left: 4px;
+  border-radius: 50%;
+}
+
+p.card-text {
+  font-size: 11px;
+}
+
+.phone-info {
+  display: flex;
+}
+
+.main {
+  overflow: hidden;
+  height: 50px;
+  transition: height 0.1s ease-in-out;
+}
+
+.description-container {
+  padding-top: 20px;
+}
+
+.title-container {
+  display: flex;
+  padding-top: 10px;
+  flex-direction: column;
+
+  h4 {
+    font-weight: 400;
+  }
+}
+
+.contact-info {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  justify-content: flex-start;
+  align-items: center;
+
+  p:first-child {
+    margin-right: 4px;
+  }
+  p:last-child {
+    margin-left: 4px;
+  }
+}

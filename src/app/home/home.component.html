@@ -1,0 +1,42 @@
+<header class="header">
+  <h1 class="header-title">Contact Elastic List</h1>
+  <div>
+    <input
+      type="text"
+      placeholder="Search..."
+      #filter
+      (change)="filterResults(filter.value)"
+    />
+  </div>
+</header>
+<main class="wrapper-grid" *ngIf="contactsList">
+  <div class="contact-card" *ngFor="let contact of filteredContactsList">
+    <div class="img-container">
+      <div
+        class="contact-img"
+        style="background-image: url({{ contact.profile_image }})"
+      >
+        <img class="img-logo" src="{{ contact.icon }}" />
+      </div>
+    </div>
+    <div class="main">
+      <div class="title-container">
+        <h4>{{ contact.name }}</h4>
+        <div class="contact-info">
+          <p class="card-text">{{ contact.job }}</p>
+          |
+          <p class="card-text">{{ contact.company_name }}</p>
+        </div>
+      </div>
+      <div class="description-container">
+        <div class="phone-info">
+          <p class="card-text">Phone Number</p>
+          <p class="card-text">{{ contact.phone }}</p>
+        </div>
+        <div>
+          <p class="card-text">{{ contact.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
